@@ -61,31 +61,31 @@ const wPackConfig = {
       test: /\.(sass|scss|css)$/,
       include: path.resolve(__dirname, paths.src.scss.slice(2)),
       use: [{
-          loader: MiniCssExtractPlugin.loader,
+        loader: MiniCssExtractPlugin.loader,
+      },
+      {
+        loader: 'css-loader',
+        options: {
+          url: false,
+          // sourceMap: true,
         },
-        {
-          loader: 'css-loader',
-          options: {
-            url: false,
-            // sourceMap: true,
-          },
-        },
-        {
-          loader: 'postcss-loader'
-        },
-        {
-          loader: 'sass-loader',
-          // options: {
-          //     sourceMap: true,
-          //     sassOptions: {
-          //         indentWidth: 4,
-          //         outputStyle: 'expanded',
-          //         sourceComments: true
-          //     }
-          // }
-        },
+      },
+      {
+        loader: 'postcss-loader'
+      },
+      {
+        loader: 'sass-loader',
+        // options: {
+        //     sourceMap: true,
+        //     sassOptions: {
+        //         indentWidth: 4,
+        //         outputStyle: 'expanded',
+        //         sourceComments: true
+        //     }
+        // }
+      },
       ],
-    }, ]
+    },]
   },
   optimization: {
     splitChunks: {
@@ -129,24 +129,24 @@ const wPackConfig = {
     new webpack.ProgressPlugin(),
     new CopyPlugin({
       patterns: [{
-          from: paths.src.fonts,
-          to: paths.dist.fonts,
-          noErrorOnMissing: true
-        },
-        {
-          from: paths.src.imgs,
-          to: paths.dist.imgs,
-          noErrorOnMissing: true
-        },
-        {
-          from: paths.src.favicon,
-          to: paths.dist.favicon,
-          noErrorOnMissing: true
-        },
-        {
-          from: paths.src.svgs,
-          to: paths.dist.svgs,
-          noErrorOnMissing: true
+        from: paths.src.fonts,
+        to: paths.dist.fonts,
+        noErrorOnMissing: true
+      },
+      {
+        from: paths.src.imgs,
+        to: paths.dist.imgs,
+        noErrorOnMissing: true
+      },
+      {
+        from: paths.src.favicon,
+        to: paths.dist.favicon,
+        noErrorOnMissing: true
+      },
+      {
+        from: paths.src.svgs,
+        to: paths.dist.svgs,
+        noErrorOnMissing: true
       }
       ],
     }),
