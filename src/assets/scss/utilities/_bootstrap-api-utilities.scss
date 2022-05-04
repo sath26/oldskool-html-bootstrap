@@ -75,6 +75,7 @@ $utilities: map-merge(
         ),
       ),
     ),
+    //every 
     /* Amend height util */
     "height": map-merge(
       map-get($utilities, "height"),
@@ -130,6 +131,7 @@ $utilities: map-merge(
       )
     ),
     /* Amend border to add states */
+    // search for border-transparent-hover:hover{border-color:transparent
     "border": map-merge(
       map-get($utilities, "border"),
       (
@@ -182,6 +184,8 @@ $utilities: map-merge(
       )
     ),
     /* Amend viewport height to include additional sizes*/
+    //search for vh-10
+    //search for vh-25
     "viewport-height": map-merge(
       map-get($utilities, "viewport-height"),
       (
@@ -193,6 +197,11 @@ $utilities: map-merge(
       )
     ),
     /* Overflow */
+    /* 
+    .overflow-sm-auto{overflow:auto!important}
+    .overflow-sm-hidden{overflow:hidden!important}
+    .overflow-sm-visible{overflow:visible!important}
+    .overflow-sm-scroll{overflow:scroll!important} */
     "overflow": map-merge(
       map-get($utilities, "overflow"),
       (
